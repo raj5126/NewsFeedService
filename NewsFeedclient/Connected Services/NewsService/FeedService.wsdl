@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="FeedService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/NewsFeed/FeedService/?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/NewsFeed/FeedService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/NewsFeed/FeedService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/NewsFeed" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/NewsFeed/FeedService/?xsd=xsd3" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFeedService_AddNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNews" />
+  </wsdl:message>
+  <wsdl:message name="IFeedService_AddNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFeedService_GetNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNews" />
+  </wsdl:message>
+  <wsdl:message name="IFeedService_GetNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFeedService_DeleteNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNews" />
+  </wsdl:message>
+  <wsdl:message name="IFeedService_DeleteNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNewsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFeedService_SearchNewsRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchNewsRecord" />
+  </wsdl:message>
+  <wsdl:message name="IFeedService_SearchNewsRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchNewsRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFeedService_UpdateNews_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNews" />
+  </wsdl:message>
+  <wsdl:message name="IFeedService_UpdateNews_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateNewsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IFeedService">
+    <wsdl:operation name="AddNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFeedService/AddNews" message="tns:IFeedService_AddNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFeedService/AddNewsResponse" message="tns:IFeedService_AddNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFeedService/GetNews" message="tns:IFeedService_GetNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFeedService/GetNewsResponse" message="tns:IFeedService_GetNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFeedService/DeleteNews" message="tns:IFeedService_DeleteNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFeedService/DeleteNewsResponse" message="tns:IFeedService_DeleteNews_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchNewsRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFeedService/SearchNewsRecord" message="tns:IFeedService_SearchNewsRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFeedService/SearchNewsRecordResponse" message="tns:IFeedService_SearchNewsRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNews">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFeedService/UpdateNews" message="tns:IFeedService_UpdateNews_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFeedService/UpdateNewsResponse" message="tns:IFeedService_UpdateNews_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFeedService" type="tns:IFeedService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AddNews">
+      <soap:operation soapAction="http://tempuri.org/IFeedService/AddNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetNews">
+      <soap:operation soapAction="http://tempuri.org/IFeedService/GetNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNews">
+      <soap:operation soapAction="http://tempuri.org/IFeedService/DeleteNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchNewsRecord">
+      <soap:operation soapAction="http://tempuri.org/IFeedService/SearchNewsRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateNews">
+      <soap:operation soapAction="http://tempuri.org/IFeedService/UpdateNews" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FeedService">
+    <wsdl:port name="BasicHttpBinding_IFeedService" binding="tns:BasicHttpBinding_IFeedService">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/NewsFeed/FeedService/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

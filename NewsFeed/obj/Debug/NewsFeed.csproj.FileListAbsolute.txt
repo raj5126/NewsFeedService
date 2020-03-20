@@ -1,0 +1,14 @@
+C:\Users\Hp\Desktop\NewsFeed\bin\Debug\NewsFeed.mdf
+C:\Users\Hp\Desktop\NewsFeed\bin\Debug\NewsFeed.dll.config
+C:\Users\Hp\Desktop\NewsFeed\bin\Debug\NewsFeed.dll
+C:\Users\Hp\Desktop\NewsFeed\bin\Debug\NewsFeed.pdb
+C:\Users\Hp\Desktop\NewsFeed\obj\Debug\NewsFeed.csprojAssemblyReference.cache
+C:\Users\Hp\Desktop\NewsFeed\obj\Debug\NewsFeed.dll
+C:\Users\Hp\Desktop\NewsFeed\obj\Debug\NewsFeed.pdb
+C:\Users\Hp\Desktop\SOA\NewsFeed\bin\Debug\NewsFeed.mdf
+C:\Users\Hp\Desktop\SOA\NewsFeed\bin\Debug\NewsFeed.dll.config
+C:\Users\Hp\Desktop\SOA\NewsFeed\bin\Debug\NewsFeed.dll
+C:\Users\Hp\Desktop\SOA\NewsFeed\bin\Debug\NewsFeed.pdb
+C:\Users\Hp\Desktop\SOA\NewsFeed\obj\Debug\NewsFeed.csprojAssemblyReference.cache
+C:\Users\Hp\Desktop\SOA\NewsFeed\obj\Debug\NewsFeed.dll
+C:\Users\Hp\Desktop\SOA\NewsFeed\obj\Debug\NewsFeed.pdb
