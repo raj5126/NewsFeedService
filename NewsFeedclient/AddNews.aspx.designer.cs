@@ -60,6 +60,15 @@ namespace NewsFeedclient
         protected global::System.Web.UI.WebControls.TextBox ntitle;
 
         /// <summary>
+        /// categorylist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList categorylist;
+
+        /// <summary>
         /// publishdate control.
         /// </summary>
         /// <remarks>
@@ -67,6 +76,24 @@ namespace NewsFeedclient
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox publishdate;
+
+        /// <summary>
+        /// imageUpload control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload imageUpload;
+
+        /// <summary>
+        /// error control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label error;
 
         /// <summary>
         /// content control.

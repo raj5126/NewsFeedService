@@ -40,6 +40,9 @@ namespace NewsFeed
         string _title = "";
         DateTime _publishdate;
         string _content = "";
+        string _category = "";
+        byte[] _newsimage;
+
 
         [DataMember]
         public string NewsID
@@ -75,5 +78,21 @@ namespace NewsFeed
             get { return _content; }
             set { _content = value; }
         }
+
+        [DataMember]
+        public string Category
+        {
+            get { return _category; }
+            set { _category = value; }
+        }
+
+
+        [DataMember]
+        public byte[] NewsImage
+        {
+            get { return _newsimage; }
+            set { _newsimage = value; }
+        }
+
     }
 }

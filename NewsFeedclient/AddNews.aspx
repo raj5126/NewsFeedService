@@ -78,9 +78,34 @@
                 </td>
             </tr>
             <tr>
+                <td class="auto-style12">&nbsp; Category&nbsp;</td>
+                <td class="auto-style4">
+                    <asp:DropDownList ID="categorylist" runat="server" Height="25px" Width="427px">
+                        <asp:ListItem>Business</asp:ListItem>
+                        <asp:ListItem>Technology</asp:ListItem>
+                        <asp:ListItem>Sports</asp:ListItem>
+                        <asp:ListItem>Celebrity</asp:ListItem>
+                        <asp:ListItem>Science</asp:ListItem>
+                        <asp:ListItem>Entertainment</asp:ListItem>
+                        <asp:ListItem>Style</asp:ListItem>
+                        <asp:ListItem>Food</asp:ListItem>
+                        <asp:ListItem>Travel</asp:ListItem>
+                    </asp:DropDownList>
+                </td>
+            </tr>
+            <tr>
                 <td class="auto-style12">&nbsp; Publish Date</td>
                 <td class="auto-style4">
                     <asp:TextBox ID="publishdate" runat="server" TextMode="DateTime" Width="427px"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style12">&nbsp; Image&nbsp;</td>
+                <td class="auto-style4">
+                    <br />
+                    <asp:FileUpload ID="imageUpload" runat="server" Width="427px" />
+                    <asp:Label ID="error" runat="server"></asp:Label>
+                    <br />
                 </td>
             </tr>
             <tr>

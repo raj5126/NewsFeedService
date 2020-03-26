@@ -26,10 +26,16 @@ namespace NewsFeedclient.NewsService {
         private string AuthornameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CategoryField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string ContentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NewsIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private byte[] NewsImageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.DateTime PublishDateField;
@@ -61,6 +67,19 @@ namespace NewsFeedclient.NewsService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Category {
+            get {
+                return this.CategoryField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CategoryField, value) != true)) {
+                    this.CategoryField = value;
+                    this.RaisePropertyChanged("Category");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public string Content {
             get {
                 return this.ContentField;
@@ -82,6 +101,19 @@ namespace NewsFeedclient.NewsService {
                 if ((object.ReferenceEquals(this.NewsIDField, value) != true)) {
                     this.NewsIDField = value;
                     this.RaisePropertyChanged("NewsID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public byte[] NewsImage {
+            get {
+                return this.NewsImageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NewsImageField, value) != true)) {
+                    this.NewsImageField = value;
+                    this.RaisePropertyChanged("NewsImage");
                 }
             }
         }

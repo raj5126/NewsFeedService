@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -26,20 +27,38 @@ namespace NewsFeedclient
         {
             try
             {
+                byte[] bytes;
                 NewsService.News nw = new NewsService.News();
                 nw.NewsID = newsId.Text;
                 nw.Authorname = author.Text;
                 nw.Title = ntitle.Text;
                 nw.PublishDate = Convert.ToDateTime(publishdate.Text);
                 nw.Content = content.Text;
-
-                NewsService.FeedServiceClient client = new NewsService.FeedServiceClient();
-                success.Text = "News Id : " + nw.NewsID + " " + client.AddNews(nw);
-
+                HttpPostedFile postedFile = imageUpload.PostedFile;
+                string filename = Path.GetFileName(postedFile.FileName);
+                string fileExtension = Path.GetExtension(filename);
+                int fileSize = postedFile.ContentLength;
+                nw.Category = categorylist.SelectedValue;
+                Console.WriteLine(fileExtension);
+                if (fileExtension.ToLower() == ".jpeg" || fileExtension.ToLower() == ".png" || fileExtension.ToLower() == ".jpg" || fileExtension.ToLower() == ".jfif")
+                {
+                    Stream stream = postedFile.InputStream;
+                    BinaryReader binaryReader = new BinaryReader(stream);
+                    bytes = binaryReader.ReadBytes((int)stream.Length);
+                    nw.NewsImage = bytes;
+                    Console.WriteLine(bytes);
+                    NewsService.FeedServiceClient client = new NewsService.FeedServiceClient();
+                    success.Text = "News Id : " + nw.NewsID + " " + client.AddNews(nw);
+                }
+                else
+                {
+                    error.Text = "Image may be not in proper format.";
+                }
+                
             }
             catch(Exception ex)
             {
-                success.Text = "News ID must be unique! ";
+                success.Text = "News ID must be unique! or Error";
             }
 
         }

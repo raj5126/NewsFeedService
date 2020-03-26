@@ -5,7 +5,7 @@ using System.ServiceModel;
 namespace NewsFeed
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "Service1" in both code and config file together.
-    public class FeedService : IFeedService
+    public class    FeedService : IFeedService
     {
         public string AddNews(News nw)
         {
@@ -14,13 +14,15 @@ namespace NewsFeed
             {
                 SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Hp\Desktop\SOA\NewsFeed\NewsFeed.mdf;Integrated Security=True");
                 SqlCommand cmd = new SqlCommand();
-                string query = @"INSERT INTO NEWS(NewsID, Authorname, Title, PublishDate, Content) VALUES(@NewsID, @Authorname, @Title, @PublishDate, @Content)";
+                string query = @"INSERT INTO NEWS(NewsID, Authorname, Title, PublishDate, Content,  Category, NewsImage) VALUES(@NewsID, @Authorname, @Title, @PublishDate, @Content, @Category, @NewsImage)";
                 cmd = new SqlCommand(query, con);
                 cmd.Parameters.AddWithValue("@NewsID", nw.NewsID);
                 cmd.Parameters.AddWithValue("@Authorname", nw.Authorname);
                 cmd.Parameters.AddWithValue("@Title", nw.Title);
                 cmd.Parameters.AddWithValue("@PublishDate", nw.PublishDate);
                 cmd.Parameters.AddWithValue("@Content", nw.Content);
+                cmd.Parameters.AddWithValue("@Category", nw.Category);
+                cmd.Parameters.AddWithValue("@NewsImage", nw.NewsImage);
                 con.Open();
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -90,9 +92,9 @@ namespace NewsFeed
             string result = " ";
             SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Hp\Desktop\SOA\NewsFeed\NewsFeed.mdf;Integrated Security=True");
             SqlCommand cmd = new SqlCommand();
-            string query = "UPDATE NEWS SET Authorname = @Authorname, Title = @Title,  PublishDate = @PublishDate, Content = @Content";
+            string query = "UPDATE NEWS SET Title = @Title, Content = @Content";
             cmd = new SqlCommand(query, con);
-            cmd.Parameters.AddWithValue("@Authorname", nw.Authorname);
+            //cmd.Parameters.AddWithValue("@Authorname", nw.Authorname);
             cmd.Parameters.AddWithValue("@Title", nw.Title);
             cmd.Parameters.AddWithValue("@Content", nw.Content);
             con.Open();

@@ -26,23 +26,38 @@ namespace NewsFeedclient
                         Label author = new Label();
                         author.Text = "By <b>" + r.Field<String>(1)+"</b><br>";
                         newspanel.Controls.Add(author);
-
                         Label date = new Label();
-                        date.Text = "<b>Publish Date : </b>" + r.Field<DateTime>(3) + "<br>";
+
+                        date.Text = r.Field<DateTime>(3) + "<br><br>";
                         newspanel.Controls.Add(date);
 
                         Label title = new Label();
-                        title.Text = "<b>Title : "+r.Field<String>(2)+"</b><br>";
+                        title.Text = "<b>"+r.Field<String>(2)+"</b><br><br>";
                         newspanel.Controls.Add(title);
 
+                        Image image = new Image();
+                        byte[] bytes = r.Field<byte[]>(6);
+                        string strBase64 = Convert.ToBase64String(bytes);
+                        image.ImageUrl = "data:Image/png;base64,"+strBase64;
+                        image.Width = 300;
+                        image.Height = 300;
+                        newspanel.Controls.Add(image);
+
+                        Label newline1 = new Label();
+                        newline1.Text = "<br><br>";
+                        newspanel.Controls.Add(newline1);
+
                         Label content = new Label();
-                        content.Text = "<b>Description : </b>" + r.Field<String>(4) + "<br>";
+                        content.Text = r.Field<String>(4) + "<br><br>";
                         newspanel.Controls.Add(content);
 
-                        Label newline = new Label();
-                        newline.Text = "<br>";
-                        newspanel.Controls.Add(newline);
+                        Label newline2 = new Label();
+                        newline2.Text = "<br><br>";
+                        newspanel.Controls.Add(newline2);
 
+                        Label hrline = new Label();
+                        hrline.Text = "<hr>";
+                        newspanel.Controls.Add(hrline);
                     }
                     catch (Exception ex)
                     {

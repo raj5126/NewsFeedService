@@ -11,6 +11,7 @@
         <asp:Label ID="newstitle" runat="server" Font-Bold="True" Font-Italic="True" Font-Size="Large" Font-Underline="True" Text="All News"></asp:Label>
         <br />
         <asp:Panel ID="newspanel" runat="server">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
         </asp:Panel>
         <p>
