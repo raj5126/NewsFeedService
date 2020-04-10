@@ -40,7 +40,7 @@ namespace NewsFeedclient
             ntitle.Text = "";
             ncontent.Text = "";
         }
-
+    
         protected void searchbtn_Click(object sender, EventArgs e)
         {
             if (nid.Text != "")
@@ -62,7 +62,7 @@ namespace NewsFeedclient
             }
             else
             {
-
+                  
                 searchmessage.Text = "Please Enter News ID!.";
             }
         }

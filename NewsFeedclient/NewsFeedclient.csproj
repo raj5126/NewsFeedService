@@ -77,6 +77,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="DeleteNews.aspx" />
     <Content Include="DisplayNews.aspx" />
     <Content Include="UpdateNews.aspx" />
     <Content Include="Web.config" />
@@ -94,6 +95,13 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteNews.aspx.cs">
+      <DependentUpon>DeleteNews.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteNews.aspx.designer.cs">
+      <DependentUpon>DeleteNews.aspx</DependentUpon>
     </Compile>
     <Compile Include="DisplayNews.aspx.cs">
       <DependentUpon>DisplayNews.aspx</DependentUpon>
