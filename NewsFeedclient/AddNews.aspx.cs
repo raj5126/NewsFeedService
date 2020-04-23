@@ -12,6 +12,7 @@ namespace NewsFeedclient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            this.UnobtrusiveValidationMode = UnobtrusiveValidationMode.None;
             if (!Page.IsPostBack)
             {
                 newsId.Text = "";
@@ -19,6 +20,7 @@ namespace NewsFeedclient
                 ntitle.Text = "";
                 publishdate.Text = "";
                 content.Text = "";
+                link.Text = "";
                 newsId.Focus();
             }
         }
@@ -39,6 +41,7 @@ namespace NewsFeedclient
                 string fileExtension = Path.GetExtension(filename);
                 int fileSize = postedFile.ContentLength;
                 nw.Category = categorylist.SelectedValue;
+                nw.VideoLink = link.Text;
                 Console.WriteLine(fileExtension);
                 if (fileExtension.ToLower() == ".jpeg" || fileExtension.ToLower() == ".png" || fileExtension.ToLower() == ".jpg" || fileExtension.ToLower() == ".jfif")
                 {

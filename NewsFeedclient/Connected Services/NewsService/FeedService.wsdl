@@ -32,6 +32,12 @@
   <wsdl:message name="IFeedService_SearchNewsRecord_OutputMessage">
     <wsdl:part name="parameters" element="tns:SearchNewsRecordResponse" />
   </wsdl:message>
+  <wsdl:message name="IFeedService_FilterNewsRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:FilterNewsRecord" />
+  </wsdl:message>
+  <wsdl:message name="IFeedService_FilterNewsRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FilterNewsRecordResponse" />
+  </wsdl:message>
   <wsdl:message name="IFeedService_UpdateNews_InputMessage">
     <wsdl:part name="parameters" element="tns:UpdateNews" />
   </wsdl:message>
@@ -54,6 +60,10 @@
     <wsdl:operation name="SearchNewsRecord">
       <wsdl:input wsaw:Action="http://tempuri.org/IFeedService/SearchNewsRecord" message="tns:IFeedService_SearchNewsRecord_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IFeedService/SearchNewsRecordResponse" message="tns:IFeedService_SearchNewsRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FilterNewsRecord">
+      <wsdl:input wsaw:Action="http://tempuri.org/IFeedService/FilterNewsRecord" message="tns:IFeedService_FilterNewsRecord_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IFeedService/FilterNewsRecordResponse" message="tns:IFeedService_FilterNewsRecord_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="UpdateNews">
       <wsdl:input wsaw:Action="http://tempuri.org/IFeedService/UpdateNews" message="tns:IFeedService_UpdateNews_InputMessage" />
@@ -91,6 +101,15 @@
     </wsdl:operation>
     <wsdl:operation name="SearchNewsRecord">
       <soap:operation soapAction="http://tempuri.org/IFeedService/SearchNewsRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilterNewsRecord">
+      <soap:operation soapAction="http://tempuri.org/IFeedService/FilterNewsRecord" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

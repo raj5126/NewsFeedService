@@ -46,6 +46,13 @@
         .auto-style18 {
             margin-left: 51px;
         }
+        .auto-style19 {
+            width: 270px;
+            height: 68px;
+        }
+        .auto-style20 {
+            height: 68px;
+        }
     </style>
 </head>
 <body>
@@ -65,7 +72,26 @@
                 </tr>
                 <tr>
                     <td class="auto-style17" colspan="2">
+                        <br />
                         <asp:Label ID="searchmessage" runat="server"></asp:Label>
+                        <br />
+                        <br />
+                        <asp:GridView ID="GridView1" runat="server" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="4" ForeColor="Black" GridLines="Horizontal">
+                            <FooterStyle BackColor="#CCCC99" ForeColor="Black" />
+                            <HeaderStyle BackColor="#333333" Font-Bold="True" ForeColor="White" />
+                            <PagerStyle BackColor="White" ForeColor="Black" HorizontalAlign="Right" />
+                            <SelectedRowStyle BackColor="#CC3333" Font-Bold="True" ForeColor="White" />
+                            <SortedAscendingCellStyle BackColor="#F7F7F7" />
+                            <SortedAscendingHeaderStyle BackColor="#4B4B4B" />
+                            <SortedDescendingCellStyle BackColor="#E5E5E5" />
+                            <SortedDescendingHeaderStyle BackColor="#242121" />
+                        </asp:GridView>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
                     </td>
                 </tr>
             </table>
@@ -89,6 +115,12 @@
                 <td class="auto-style1">&nbsp; News Content : &nbsp;</td>
                 <td class="auto-style8">
                     <asp:TextBox ID="ncontent" runat="server" Height="179px" TextMode="MultiLine" Width="427px"></asp:TextBox>
+                </td>
+            </tr>
+            <tr>
+                <td class="auto-style19">&nbsp; Video link :&nbsp;</td>
+                <td class="auto-style20">
+                    <asp:TextBox ID="nvideo" runat="server" Height="42px" Width="426px"></asp:TextBox>
                 </td>
             </tr>
             <tr>

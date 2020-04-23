@@ -43,6 +43,9 @@ namespace NewsFeedclient.NewsService {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TitleField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string VideoLinkField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -144,6 +147,19 @@ namespace NewsFeedclient.NewsService {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string VideoLink {
+            get {
+                return this.VideoLinkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.VideoLinkField, value) != true)) {
+                    this.VideoLinkField = value;
+                    this.RaisePropertyChanged("VideoLink");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -181,6 +197,12 @@ namespace NewsFeedclient.NewsService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFeedService/SearchNewsRecord", ReplyAction="http://tempuri.org/IFeedService/SearchNewsRecordResponse")]
         System.Threading.Tasks.Task<System.Data.DataSet> SearchNewsRecordAsync(NewsFeedclient.NewsService.News nw);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFeedService/FilterNewsRecord", ReplyAction="http://tempuri.org/IFeedService/FilterNewsRecordResponse")]
+        System.Data.DataSet FilterNewsRecord(string category);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFeedService/FilterNewsRecord", ReplyAction="http://tempuri.org/IFeedService/FilterNewsRecordResponse")]
+        System.Threading.Tasks.Task<System.Data.DataSet> FilterNewsRecordAsync(string category);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IFeedService/UpdateNews", ReplyAction="http://tempuri.org/IFeedService/UpdateNewsResponse")]
         string UpdateNews(NewsFeedclient.NewsService.News nw);
@@ -246,6 +268,14 @@ namespace NewsFeedclient.NewsService {
         
         public System.Threading.Tasks.Task<System.Data.DataSet> SearchNewsRecordAsync(NewsFeedclient.NewsService.News nw) {
             return base.Channel.SearchNewsRecordAsync(nw);
+        }
+        
+        public System.Data.DataSet FilterNewsRecord(string category) {
+            return base.Channel.FilterNewsRecord(category);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> FilterNewsRecordAsync(string category) {
+            return base.Channel.FilterNewsRecordAsync(category);
         }
         
         public string UpdateNews(NewsFeedclient.NewsService.News nw) {

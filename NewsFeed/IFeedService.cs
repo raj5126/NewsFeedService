@@ -25,6 +25,9 @@ namespace NewsFeed
         DataSet SearchNewsRecord(News nw);
 
         [OperationContract]
+        DataSet FilterNewsRecord(string category);
+
+        [OperationContract]
         string UpdateNews(News nw);
 
         // TODO: Add your service operations here
@@ -42,7 +45,7 @@ namespace NewsFeed
         string _content = "";
         string _category = "";
         byte[] _newsimage;
-
+        string _videolink = "";
 
         [DataMember]
         public string NewsID
@@ -92,6 +95,13 @@ namespace NewsFeed
         {
             get { return _newsimage; }
             set { _newsimage = value; }
+        }
+        
+        [DataMember]
+        public string VideoLink
+        {
+            get { return _videolink; }
+            set { _videolink = value; }
         }
 
     }
